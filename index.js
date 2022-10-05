@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const multer  = require('multer')
+const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
 var ImageKit = require("imagekit");
 
@@ -36,6 +36,7 @@ app.post('/upload-photo', upload.single('file'), (req, res) => {
 
 
 app.get('/', (req, res) => {
+  console.log("/");
   res.send('Hello World!')
 })
 
